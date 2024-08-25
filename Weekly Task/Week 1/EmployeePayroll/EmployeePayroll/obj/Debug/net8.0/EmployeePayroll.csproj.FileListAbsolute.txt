@@ -1,0 +1,14 @@
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\bin\Debug\net8.0\EmployeePayroll.exe
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\bin\Debug\net8.0\EmployeePayroll.deps.json
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\bin\Debug\net8.0\EmployeePayroll.runtimeconfig.json
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\bin\Debug\net8.0\EmployeePayroll.dll
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\bin\Debug\net8.0\EmployeePayroll.pdb
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\obj\Debug\net8.0\EmployeePayroll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\obj\Debug\net8.0\EmployeePayroll.AssemblyInfoInputs.cache
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\obj\Debug\net8.0\EmployeePayroll.AssemblyInfo.cs
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\obj\Debug\net8.0\EmployeePayroll.csproj.CoreCompileInputs.cache
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\obj\Debug\net8.0\EmployeePayroll.dll
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\obj\Debug\net8.0\refint\EmployeePayroll.dll
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\obj\Debug\net8.0\EmployeePayroll.pdb
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\obj\Debug\net8.0\EmployeePayroll.genruntimeconfig.cache
+C:\Users\dhanapal.m\source\repos\EmployeePayroll\EmployeePayroll\obj\Debug\net8.0\ref\EmployeePayroll.dll
