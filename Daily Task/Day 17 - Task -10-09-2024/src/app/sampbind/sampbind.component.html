@@ -1,0 +1,26 @@
+
+<h1>Hello</h1>
+<p>Dhanapal</p>
+<p>{{fname}}{{lname}}</p>
+
+<img src="{{imgpath}}" width="20%" height="20%"/>
+
+<img [src] ="imgpath" width="20%" height="20%"/>  -- property binding 
+
+<button (click)="count()">Click me </button>
+
+<p>Count is {{c}}</p>
+
+
+<input type="text" (input)="show($event)">
+
+<h2 [style.background-color]="'blue'">the value is {{txt}}</h2> <!--inline style-->
+
+
+<input type="text" name="value" [(ngModel)]="value">
+<h3 [className]="'color'">You entererd {{value}}</h3> 
+
+<p [ngClass]="['color','size50']">using ngclass</p>
+<h4 [ngStyle]="{'color':'green','font-size':'30px'}">using ng style</h4>
+
+

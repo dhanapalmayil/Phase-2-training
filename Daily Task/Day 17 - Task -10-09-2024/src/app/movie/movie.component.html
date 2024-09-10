@@ -1,0 +1,83 @@
+<div class="container mt-4">
+ 
+    <h1 class="text-center mb-4">All in All Movies</h1>
+  
+    <table class="table table-hover table-bordered table-striped">
+        <thead class="table-dark">
+            <tr class="text-center">
+                <th>Movie Id</th>
+                <th>Movie Name</th>
+                <th>Movie Language</th>
+                <th>Movie Price</th>
+                <th>Movie Image</th>
+                <th>Stock Status</th>
+                <th>Actions</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of movielst" class="text-center align-middle">
+                <td>{{ movie.MovieId }}</td>
+                <td>{{ movie.MovieName }}</td>
+                <td>{{ movie.MovieLanguage }}</td>
+                <td>{{ movie.Price | currency }}</td>
+  
+                <!-- Increased image size -->
+                <td><img [src]="movie.Img" class="img-fluid rounded" width="150" height="200" /></td>
+  
+               
+                <td>
+                    <span *ngIf="movie.Stock && movie.Stock > 0" class="badge bg-success">In Stock ({{movie.Stock}})</span>
+                    <span *ngIf="movie.Stock === 0" class="badge bg-danger">Out of Stock</span>
+                </td>
+  
+               
+                <td>
+                    <button class="btn btn-primary me-2" [disabled]="movie.Stock === 0" (click)="addToCart(movie)">
+                        Add to Cart
+                    </button>
+                    <button class="btn btn-secondary" [disabled]="movie.Stock === 0" (click)="buyNow(movie)">
+                        Buy Now
+                    </button>
+                </td>
+  
+               
+                <td>
+                    <span class="stars" [ngStyle]="{'color': movie.Rating >= 4 ? 'green' : movie.Rating >= 2 ? 'orange' : 'red'}">
+                        {{ getStars(movie.Rating) }}
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  
+    
+    <div class="cart mt-5">
+        <h2 class="text-center">Movies in Cart</h2>
+  
+        <table *ngIf="cart.length > 0" class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cart">
+                    <td>{{ item.MovieName }}</td>
+                    <td>{{ item.Price | currency }}</td>
+                </tr>
+               
+                <tr>
+                    <td><strong>Total Price:</strong></td>
+                    <td><strong>{{ totalPrice | currency }}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+  
+        <div *ngIf="cart.length === 0" class="text-center">
+            <p>Your cart is empty.</p>
+        </div>
+    </div>
+  </div>
+  
