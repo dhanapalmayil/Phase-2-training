@@ -1,0 +1,102 @@
+<p>products works!</p>
+<h3>Products</h3>
+
+<!-- Container div to apply flexbox -->
+<div style="display: flex; align-items: center;">
+    <select [(ngModel)]="val" style="margin-right: 20px;">
+      <option *ngFor="let pro of category" [value]="pro">{{ pro }}</option>
+    </select>
+    <div [ngSwitch]="val">
+      <div *ngSwitchCase="'All'"><img src="./../../../public/all1.jpg" width="100px"/></div>
+      <div *ngSwitchCase="'Tv'"><img src="./../../../public/tv.jfif" width="100px"/></div>
+      <div *ngSwitchCase="'Mobile'"><img src="./../../../public/mobile.jfif" width="100px"/></div>
+      <div *ngSwitchCase="'Laptop'"><img src="./../../../public/laptop.jfif" width="100px"/></div>
+      <div *ngSwitchCase="'Washing Machine'"><img src="./../../../public/washm.jfif" width="100px"/></div>
+      <div *ngSwitchDefault></div>
+    </div>
+  </div>
+  
+<table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>ProId</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Add</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pro of prolst;"  [hidden]="val !== 'All' && val != pro.Category">
+
+            <td>{{pro.ProId}}</td>
+            <td>{{pro.Name}}</td>
+          
+            
+            <ng-container *ngIf="pro.Stock>0 ;then instock;else outstock;"></ng-container>
+            <ng-template #instock><td>{{pro.Price}}</td></ng-template>
+            <ng-template #outstock><td><b>Out of stock</b></td></ng-template>
+            <td>{{pro.Stock}}</td>
+
+            <td>{{pro.Category}}</td>
+            <td><img src={{pro.Img}} width="100px"/></td>
+            <td><button [disabled]="pro.Stock===0" class="btn btn-primary">Add to cart</button></td>
+        </tr>
+    </tbody>
+</table>
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="container mt-4">
+
+    <div class="mb-3">
+      <label for="ProId" class="form-label">ProId</label>
+      <input type="text" class="form-control" name="ProId" ngModel #proid="ngModel" required>
+      <div *ngIf="proid.invalid && proid.touched" class="text-danger">
+        <small *ngIf="proid.errors?.['required']">ProId is required.</small>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="Name" class="form-label">Name</label>
+      <input type="text" class="form-control" name="Name" ngModel #name="ngModel" required>
+      <div *ngIf="name.invalid && name.touched" class="text-danger">
+        <small *ngIf="name.errors?.['required']">Name is required.</small>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="Price" class="form-label">Price</label>
+      <input type="text" class="form-control" id="Price" name="Price" ngModel #Price="ngModel" required>
+      <div *ngIf="Price.invalid && Price.touched" class="text-danger">
+        <small *ngIf="Price.errors?.['required']">Price is required.</small>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="Stock" class="form-label">Stock</label>
+      <input type="text" class="form-control" id="Stock" name="Stock" ngModel #Stock="ngModel" required>
+      <div *ngIf="Stock.invalid && Stock.touched" class="text-danger">
+        <small *ngIf="Stock.errors?.['required']">Stock is required.</small>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="Category" class="form-label">Category</label>
+      <input type="text" class="form-control" id="Category" name="Category" ngModel #Category="ngModel" required>
+      <div *ngIf="Category.invalid && Category.touched" class="text-danger">
+        <small *ngIf="Category.errors?.['required']">Category is required.</small>
+      </div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="Image" class="form-label">Image</label>
+      <input type="text" class="form-control" id="Image" name="Image" ngModel #Image="ngModel" required>
+      <div *ngIf="Image.invalid && Image.touched" class="text-danger">
+        <small *ngIf="Image.errors?.['required']">Image is required.</small>
+      </div>
+    </div>
+  
+    <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Submit</button>
+  
+  </form>
+  
