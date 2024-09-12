@@ -1,0 +1,36 @@
+<p class="text-primary">Organization List</p>
+
+<div class="mb-3">
+    <button class="btn btn-success" (click)="addCompany()">
+        <i class="bi bi-plus-circle"></i> Add Company
+    </button>
+</div>
+
+<table class="table table-hover table-bordered align-middle text-center shadow-sm">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let company of orgs">
+        <td>{{ company.orgId }}</td>
+        <td>{{ company.orgName }}</td>
+        <td>
+          <button class="btn btn-info btn-sm me-1" (click)="viewDetails(company.orgId)">
+            <i class="bi bi-info-circle"></i> Details
+          </button>
+
+          <button class="btn btn-warning btn-sm me-1" (click)="updateCompany(company.orgId)">
+            <i class="bi bi-pencil-square"></i> Update
+          </button>
+
+          <button class="btn btn-danger btn-sm" (click)="deleteCompany(company.orgId)">
+            <i class="bi bi-trash"></i> Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+</table>

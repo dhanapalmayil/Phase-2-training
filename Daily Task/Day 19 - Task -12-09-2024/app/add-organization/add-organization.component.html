@@ -1,0 +1,11 @@
+<p class="text-success">Add Organization </p>
+
+<form (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label for="orgname" class="form-label">Organization Name</label>
+        <input type="text" id="orgname" name="orgname" ngModel [(ngModel)]="org.orgName" class="form-control" placeholder="Enter organization name" required>
+        <div class="invalid-feedback">Please enter an organization name.</div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Add Company</button>
+</form>

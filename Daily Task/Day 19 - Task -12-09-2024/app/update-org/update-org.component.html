@@ -1,0 +1,17 @@
+<p class="text-warning">Update Organization</p>
+
+<form (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label for="orgid" class="form-label">Org-Id</label>
+        <input type="number" id="orgid" name="orgid" class="form-control" [(ngModel)]="Orgdata.orgId" placeholder="Enter Organization ID" required>
+        <div class="invalid-feedback">Please enter a valid Org-Id.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="orgname" class="form-label">Organization Name</label>
+        <input type="text" id="orgname" name="orgname" class="form-control" [(ngModel)]="Orgdata.orgName" placeholder="Enter Organization Name" required>
+        <div class="invalid-feedback">Please enter the organization name.</div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Update Company</button>
+</form>
